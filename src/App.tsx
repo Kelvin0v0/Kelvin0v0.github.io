@@ -3,6 +3,7 @@ import AppFooter from './components/AppFooter'
 import AppHeader from './components/AppHeader'
 import MediaPro2 from './images/MediaPro.png'
 import fyp from './images/fyp.png'
+import icon from './images/icon.jpeg'
 import upcomingImage from './images/upcoming.svg'
 
 const workExperiences = [
@@ -54,7 +55,8 @@ const projects = [
     title: 'VibPay',
     brief: 'Mobile Peer-to-Peer Payment System based on Vibration.',
     detail:
-      'The built-in vibrator and accelerometer on the phone are used to send and receive the information. The communication ensures the payment is conducted at a close distance.',
+      'The built-in vibrator and accelerometer on the phone are used to send and receive the information. The communication ensures the payment is conducted at a close distance. \n',
+    link: "https://ieeexplore.ieee.org/document/9589526",
     coverImage: fyp,
     images: [],
   },
@@ -168,7 +170,7 @@ export default function App() {
             <article className="card bg-base-200 shadow-md">
               <div className="avatar m-6">
                 <div className="w-32 rounded-full">
-                  <img src="https://media.licdn.com/dms/image/v2/D5603AQGazj5OUkWp4w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1687102196401?e=1773878400&v=beta&t=eUfdI6bLg_2E96xuVn-L98rSIifrCNfex3AU2OHsgug" />
+                  <img src={icon} />
                 </div>
               </div>
               <div className="card-body">
@@ -338,6 +340,7 @@ export default function App() {
                           <p className="mt-1 text-sm opacity-80">{project.brief}</p>
                           <div className="mt-3 space-y-3">
                             <p className="text-sm">{project.detail}</p>
+                            <a className='text-sm underline underline-offset-2 hover:text-blue-5' href={project.link} target="_blank">{project.link}</a>
                             <div className="grid gap-3 sm:grid-cols-2">
                               {project.images.map((image, imageIndex) => (
                                 <img
